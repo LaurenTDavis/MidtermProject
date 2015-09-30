@@ -30,28 +30,15 @@ function playSound2(){
 }
 
 
-// Open Door
-function openDoor(field) {
-    var y = $(field).find(".big-box");
-    var x = y.attr("class");
-    if (y.hasClass("back")) {
-        y.removeClass("back");
-    }
-    else {
-        $(".big-box").removeClass("back");
-        y.addClass("back");
-    }
-}
 
 angular.module('myApp', []); 
 
 var mainControllerFunc = function($scope) { 
 	$scope.openClick = false; 
 
-	$scope.openMicro = function(event) {
-		console.log(event); 
-		// if ($scope.openClick === !$scope.openClick)
-		openDoor(event);
+	$scope.openMicro = function() {
+		$scope.openClick = !$scope.openClick;
+	
 	}
 	
 }
