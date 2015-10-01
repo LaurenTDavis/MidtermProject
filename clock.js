@@ -1,16 +1,16 @@
 
  var myModule = angular.module("myApp", []);
 
-myModule.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
+myModule.controller("counter",['$scope','$timeout', function($scope,$timeout){
 
 
 
 $scope.sec = '0'+0;
-$scope.min = 20;
+$scope.min = 0;
 $scope.counter = $scope.min * 60;
 
 var stopped;
-var audio = new Audio('bell.wav');
+var audio = new Audio('ding.mp3');
 console.log(parseInt($scope.counter))
 
 

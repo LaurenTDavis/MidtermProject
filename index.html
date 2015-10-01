@@ -17,21 +17,22 @@
 	<audio id="audio3" src="sounds/ding.mp3"></audio>
 
 
-
 	<div class="inside">
-	<div class="medium-box curves"></div>
+		<div class="medium-box curves"></div>
 		<div class="big-box" ng-class="{'back': openClick}">
 			<div class="frame curves black">
 				<div class="window curves"></div>
 			</div>
-		</div>
-			
+		</div>	
 	</div>
+
 
 	<div class="small-box">
 		<div class="keypad curves black">
-			<input class="screen curves" id="number" placeholder="{{min}} : {{sec}}">
-	
+		<span ng-show="durationDisappear"><input type="text" name="timer" class="screen curves" value="{{min}} : {{sec}}"></span> 
+		<span ng-hide="durationDisappear"><input ng-change="enterTime()" id="number" type="text" name="timer" ng-model="min" class="screen curves" ></span> 
+		
+			
 			<button class="key-button black" onclick="number_write(1); playSound1()">1</button>
 			<button class="key-button black" onclick="number_write(2); playSound1()">2</button>
 			<button class="key-button black" onclick="number_write(3); playSound1()">3</button>
@@ -45,26 +46,22 @@
 			<button class="key-button black" onclick="number_write(0); playSound1()" >0</button>
 
 
-
 			<button class="key-button black" ng-click="countdown()"onclick="playSound1()"><span class="text-font">Start</span></button>
-
-
 
 
 		</div>
 
-		<button class="open-button curves" onclick="playSound2()" ng-click="openMicro()">
+		<button class="open-button curves" onclick="playSound2()" ng-click="openMicro()"></button>
 
 	</div>
 
-<!--
-		       <p>{{min}} : {{sec}}</p>
-            <span ng-hide="durationDisappear">Timer Duration: <input ng-change="enterTime()" type="text" name="timer" ng-model="min" style="width: 20px;"> minutes.</span><br>   
-            <button ng-click="countdown()">Start</button> 
-            <button ng-click="pause()">Pause</button>
-            <button ng-click="stop()">Cancel</button>
+   
+   
+    
+       
+        
+ 
      
-       -->
 
 
 
