@@ -24,11 +24,16 @@ function playSound1(){
   var audio = document.getElementById("audio1");
        audio.play();
 }
+
 function playSound2(){
   var audio = document.getElementById("audio2");
        audio.play();
 }
 
+function playSound3(){
+  var audio = document.getElementById("audio3");
+       audio.play();
+}
 
 
 angular.module('myApp', []); 
