@@ -89,15 +89,16 @@ $scope.countdown = function() {
   };
 
 $scope.stop = function(){
-  $scope.counter = 0;
-  $scope.min = '0'+0;
-  $scope.sec = '0'+0;
-  $timeout.cancel(stopped);
-  $scope.durationDisappear = false;
+   	audio2.pause();
+	$scope.counter = 0;
+	$scope.min = '0'+0;
+	$scope.sec = '0'+0;
+	$timeout.cancel(stopped);
+	$scope.durationDisappear = false;
 }
     
 $scope.pause = function(){
-   $timeout.cancel(stopped);
+   	$timeout.cancel(stopped);
     
     } 
 	

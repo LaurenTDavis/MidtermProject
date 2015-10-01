@@ -140,3 +140,12 @@ input {
 	border-radius: 1em 0 0 1em;
 }
 /* End of Animation */
+
+
+canvas { 
+	display: block; 
+	margin: 0 auto; 
+}
+body {
+	background-color: brown;
+}
