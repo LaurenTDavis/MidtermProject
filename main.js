@@ -18,7 +18,6 @@ function number_clear()
 
 
 
-
 // Audio Controls 
 function playSound1(){
   var audio = document.getElementById("audio1");
@@ -53,7 +52,9 @@ $scope.min = 0;
 $scope.counter = $scope.min * 60;
 
 var stopped;
-var audio = new Audio('Sounds/ding.mp3');
+var audio1 = new Audio('Sounds/ding.mp3');
+var audio2 = new Audio('Sounds/microwave-on.mp3');
+
 console.log(parseInt($scope.counter))
 
 
@@ -67,18 +68,22 @@ $scope.enterTime = function() {
 $scope.countdown = function() { 
     $scope.durationDisappear = true;
     stopped = $timeout(function() {
-       console.log($scope.counter);
-     $scope.counter--; 
-     number_write($scope.countdown());   
+    	console.log($scope.counter);
+    	$scope.counter--; 
+    	$scope.countdown();   
     }, 1000);
     $scope.min = (($scope.counter / 60)-($scope.counter%60/60))
     if ($scope.min < 10) { $scope.min = '0'+$scope.min}
     $scope.sec = $scope.counter % 60
     if ($scope.sec < 10) { $scope.sec = '0'+$scope.sec}
 
-    if ($scope.counter == 0) {
-      $timeout.cancel(stopped) 
-      audio.play(); 
+    if ($scope.counter === 0) {
+    	audio2.pause();
+	    $timeout.cancel(stopped) 
+	    audio1.play(); 
+    }
+    else {
+    	audio2.play();
     }
 
   };

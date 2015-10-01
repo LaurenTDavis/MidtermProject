@@ -108,6 +108,9 @@ input {
 
 }
 
+.brown {
+	background-color: brown;
+}
 
 /* Animation */
 .big-box {
